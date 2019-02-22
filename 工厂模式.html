@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function Factory() {
+            this.getFactory = function (type) {
+                switch (type) {
+                    case "Boy":
+                        return new Boy()
+                        break;
+                    case "Girl":
+                        return new Girl()
+                        break;
+                    default:
+                        return new Human()
+                        break;
+                }
+            }
+        }
+
+        function Human(word) {
+            this.word = word || "我是一个人类"
+            this.saySomething = function () {
+                console.log("有个人说：", this.word)
+            }
+        }
+
+        function Boy() {
+            Human.call(this)
+            this.word = "我是一个男的"
+        }
+
+        function Girl() {
+            Human.call(this)
+            this.word = "我是一个女的"
+        }
+
+        var factory = new Factory();
+        console.log(factory)
+        var boy = factory.getFactory("BOY");
+        boy.saySomething();
+    </script>
+</body>
+
+</html>

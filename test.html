@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function a() {
+            var vara = 0;
+            return function () {
+                vara++;
+                console.log(vara)
+            }
+        }
+
+
+        var c = a();
+        c();
+        c();
+        c();
+        c();
+        c();
+        c();
+
+
+        // function a() {
+        //     return 1;
+        // }
+
+        // function b() {
+        //     return function () {
+        //         return function () {
+        //             return function () {
+        //                 return 3333
+        //             }
+        //         }
+        //     }
+        // }
+
+        // //typeof 
+        // //Number String Boolean Object function
+        // //1、如何判断一个变量是否是数组
+        // console.log(typeof a);
+        // console.log(a());
+        // console.log(b())
+
+        // function temp() {
+        //     return function () {
+        //         return function () {
+        //             return 3333
+        //         }
+        //     }
+        // }
+
+        // console.log(b()()()());
+    </script>
+</body>
+
+</html>
